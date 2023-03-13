@@ -43,22 +43,23 @@ Scanner sc = new Scanner(System.in).useDelimiter("\n");
 
     public HashSet <Pais> eliminarPais(HashSet<Pais> paisHashSet){
         HashSet <Pais> listaSinAlgunPais =new HashSet<>();
-    Pais paisEliminado=null;
-    System.out.println("pone el pais que vas a eliminar");
-    String paisEliminar=sc.next();
-    Iterator<Pais>its= paisHashSet.iterator();
-    while (its.hasNext() && paisEliminado==null){
-        Pais xxxx= its.next();
-            if (xxxx.getNombre().equals(paisEliminar)){
+        Pais paisEliminado=null;
+        System.out.println("pone el pais que vas a eliminar");
+        String paisCandidadoEliminarString=sc.next();
+
+        Iterator<Pais>its= paisHashSet.iterator();
+        while (its.hasNext() && paisEliminado==null){
+            Pais variableIteradora= its.next();
+            if (variableIteradora.getNombre().equals(paisCandidadoEliminarString)){
                 its.remove();
-                paisEliminado=xxxx;
+                paisEliminado=variableIteradora;
             }
       }
     if (paisEliminado!=null){
-        System.out.println("el pais se elimino");
+        System.out.println("El pais ingresado se eliminó");
         System.out.println("");
     }else {
-        System.out.println("no se encontró naranja");
+        System.out.println("No se encontró che...");
         System.out.println("");
     }
 
